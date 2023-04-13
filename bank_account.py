@@ -1,3 +1,5 @@
+import numpy
+
 class BankAccount:
     
     all_accounts = []
@@ -29,8 +31,10 @@ class BankAccount:
     
     @classmethod
     def print_all_statements(cls):
+        i = 0
         for account in cls.all_accounts:
-            print(account)
+            print(f'Account {i} balance is ${account.balance}')
+            i +=1
 
 ba1 = BankAccount(0.1, 500)
 ba1.deposit(200).deposit(100).deposit(250).withdraw(400).yield_interest().display_account_info()
